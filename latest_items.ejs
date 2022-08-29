@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+    <div class="Latestitmes">
+        <div class="row row-cols-lg-5 row-cols-md-2">
+            <% for(var j=0;j<latest.length;j++) { %>
+                <a href="/latest/<%= latest[j].name %>" class="col">
+                    <div class="img img-large">
+                        <img src="/images/<%= latest[j].img %>">
+                    </div>
+                    <div class="text">
+                        <%= latest[j].name %>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    </div>
+<%- include("partials/footer") -%>

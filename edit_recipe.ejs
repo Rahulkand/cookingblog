@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+<div class="edit">
+    
+    <form action="/edit_recipe_ingredient" method="post" class="form">
+            <label for="Ingedients">Ingedients</label>
+            <div class="items">
+                <% for(var i=0;i<Items.length;i++) { %>
+                    <label for="Item <%= i+1 %>">Item <%= i+1 %></label><br>
+                    <p><%= Items[i] %></p>
+                <% } %>
+            </div>
+            <input type="text" name="recipe_items" placeholder="ex:Ice">
+            <button type="submit" class="btn btn-outline-dark" name="type"value="update">+Ingredient</button>
+    </form>
+    <form action="/submit" method="post">
+        <label for="name">Name</label><br>
+        <input name="item_name" type="text" placeholder="Ex:pepper chicken" value="<%= item_name %>"><br>
+        <label for="name">Author</label><br>
+        <input name="Author" type="text" placeholder="Ex: YourName" value="<%= Author %>"><br>
+        <label for="name">email</label><br>
+        <input name="email" type="text" placeholder="Ex:YourEmail" value="<%= email %>"><br>
+        <label for="des">des</label><br>
+        <textarea name="des" id="" cols="60" rows="10" placeholder="Ex:Write about u r recipe...." value="<%= des %>"></textarea>  <br>  
+        <label for="name">category</label><br>
+        <input name="category" type="text" placeholder="Ex:Asian,Sapnish,Indian etc.... " value="<%= category %>"><br>
+        <button type="sumbit" class="btn btn-outline-dark" name="submit" value="Success_update">Submit</button>
+        <button type="sumbit" class="btn btn-outline-dark" name="submit" value="cancel">Cancel</button>
+        
+    </form>
+
+</div>
+<%- include("partials/footer") -%>

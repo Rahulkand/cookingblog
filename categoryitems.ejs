@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+    <div class="categoryitmes">
+        <div class="heading"><h1><%= heading %></h1></div>
+            <div class="row row-cols-lg-5 row-cols-md-3 con category-list">
+               <% for(var i=0;i<c_items.length;i++) { %>
+                <a href="/categories/<%= c_items[i].category %>/<%= c_items[i].name %>" class="col">
+                    <div class="img">
+                        <img src="/images/<%= c_items[i].img %>">
+                    </div>
+                    <div class="text">
+                        <%= c_items[i].name %>
+                    </div>
+                </a>
+               <% } %>
+            </div>
+        </div>
+<%- include("partials/footer") -%>

@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+<div class="Submit-form">
+        <form action="/submit-form" method="post" class="form">
+            <label for="Ingedients">Ingedients</label>
+            <div class="items">
+                <% for(var i=0;i<Items.length;i++) { %>
+                    <h6 class="item"><%= Items[i] %></h6>
+                <% } %>
+            </div>
+            <input type="text" name="recipe_items" placeholder="ex:Ice">
+            <button type="submit" class="btn btn-outline-dark" class="add">+Ingredient</button>
+        </form>
+    <form action="/submit" method="post">
+        <label for="name">Name</label><br>
+        <input name="item_name" type="text" placeholder="Ex:pepper chicken"><br>
+        <label for="name">Author</label><br>
+        <input name="Author" type="text" placeholder="Ex: YourName"><br>
+        <label for="name">email</label><br>
+        <input name="email" type="text" placeholder="Ex:YourEmail"><br>
+        <label for="des">des</label><br>
+        <textarea name="des" id="" cols="60" rows="10" placeholder="Ex:Write about u r recipe...."></textarea>  <br>  
+        <label for="name">category</label><br>
+        <input name="category" type="text" placeholder="Ex:Asian,Sapnish,Indian etc.... "><br>
+        <button type="sumbit" class="btn btn-outline-dark" name="submit" value="Success">Submit</button>
+        <button type="sumbit" class="btn btn-outline-dark" name="submit" value="cancel ">Cancel</button>
+        
+    </form>
+</div>
+<%- include("partials/footer") -%>

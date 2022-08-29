@@ -1,0 +1,25 @@
+<%- include("partials/header") -%>
+    <div class="latest-item-detail row row-cols-lg-2">
+        <div class="img col">
+            <img src="/images/<%= image %>" id="img-uni" class="">
+        </div>
+        <div class="details col">
+            <h1>Recipe <%= item_name %></h1>
+            <h3>Ingredient</h3>
+            <ul>
+                <% for(var i=0;i<ingredient.length;i++) { %>
+                    <li><p><%= ingredient[i] %></p></li>
+                <% } %>
+            </ul>
+            <p>Author : <%= author %></p>
+            <p>Author's Eamil : <%= email_author %></p>
+            <form action="/" method="post"> 
+                <button type="sumbit" name ="RecipeName"value="<%= id %>">Delete Item</button>
+            </form> 
+                <a href="/editRecipe/<%= item_name %>">
+                    <button>Edit Item</button>
+                </a>
+            
+        </div>
+    </div>
+<%- include("partials/footer") -%>

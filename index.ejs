@@ -1,0 +1,105 @@
+<%- include("partials/header") -%>
+<div class=" main">
+    <div class="intro">
+        <div class="row intro-row">
+            <div class="col-md-6 intro-text">
+                <div class="text">
+                    <h1>Huge collections.....</h1>
+                </div>
+                <div class="des">
+               
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    
+                </div>
+                <div class="intro-links">
+                    <a href="#explore-latest"><button class="btn btn-outline-dark" >Explore Latest</button></a>
+                    <a href="/random-recipe/<%=  %>"><button class="btn btn-outline-dark" >Random Recipe</button></a>
+                </div>
+            </div>
+            <div class="col-md-6 intro-image">
+                <img src="/images/intro-image.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+        <!-- category Start -->
+       
+        <div class="row row-cols-lg-6 row-cols-md-3 con">
+        <% for(var i=0;i<categories_t.length;i++) { %>
+         <a href="/categories/<%= categories_t[i].name %>" class="col">
+            <div class="img">
+                <img src="/images/<%=categories_t[i].img%>">
+            </div>
+            <div class="text">
+                <%= categories_t[i].name %>
+            </div>
+        </a>
+        <% } %>
+        <a href="/categories" class="col">
+            <div class="img">
+                <img src="/images/view-all-food.jpg">
+            </div>
+            <div class="text">
+                View All
+            </div>
+        </a>
+        </div>
+
+            
+        <!-- category End -->
+
+        <!-- latest  start-->
+        <div class="latest-items" id="explore-latest">
+            <div class="d-flex justify-content-between">
+                <h2>Latest</h2>
+                <a href="/latestItems" class="view-more">View more</a>
+            </div>
+            <div class="row row-cols-lg-5 row-cols-md-2">
+               <% for(var j=0;j<latest.length;j++) { %>
+                <a href="/latest/<%= latest[j].name %>" class="col">
+                    <div class="img img-large">
+                        <img src="/images/<%= latest[j].img %>">
+                    </div>
+                    <div class="text">
+                        <%= latest[j].name %>
+                    </div>
+                </a>
+               <% } %>
+            </div>
+        </div>
+        <!-- Latest End -->
+
+        <!-- Sumbit recipe start -->
+        <div class="submit-recipe cr">
+            <h2>Publish your recipe for free today....</h2>
+            <div id="carouselExampleIndicators" class="carousel slide sub" data-bs-ride="true">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active c-1">
+                    <img src="/images/crousel-1.jpeg" class="d-block w-100 img-fluid" alt="...">
+                </div>
+                <div class="carousel-item c-1">
+                    <img src="/images/crousel-2.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item c-1">
+                    <img src="/images/crousel-3.jpg" class="d-block w-100" alt="...">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <p>Pubish your recipe infront of thousands of people for free....</p>
+            <a href="/submit-recipe"><button class="btn btn-outline-dark">Submit Recipe</button></a>
+        </div>
+        <!-- Submit recipe End -->
+    </div>
+</div>
+<%- include("partials/footer") -%>
